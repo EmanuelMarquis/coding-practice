@@ -13,6 +13,10 @@ void initBlackboard(Blackboard *blackboard) {
 }
 
 void freeBlackboard(Blackboard *blackboard) {
+    for(int i=0; i<blackboard->size; i++) {
+        free(blackboard->students[i]);
+    }
+
     free(blackboard->students);
 }
 
