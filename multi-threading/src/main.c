@@ -12,10 +12,8 @@ int main() {
     // int grades[6] = {10, 8, 9, 7, 10, 8};
 
     pthread_t userInputThreadID;
-    UsrThread_Args args;
-    initUserInputThreadArgs(&args, &bb);
 
-    if(pthread_create(&userInputThreadID, NULL, userInputThread, &args) != 0) {
+    if(pthread_create(&userInputThreadID, NULL, userInputThread, &bb) != 0) {
         printf("Failed to create userInputThread!\n");
         exit(1);
     }
