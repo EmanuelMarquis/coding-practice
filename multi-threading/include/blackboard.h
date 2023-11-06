@@ -14,10 +14,13 @@ void initBlackboard(Blackboard *blackboard) {
 
 void freeBlackboard(Blackboard *blackboard) {
     for(int i=0; i<blackboard->size; i++) {
+        free(blackboard->students[i]->name);
+        free(blackboard->students[i]->grades);
         free(blackboard->students[i]);
     }
 
     free(blackboard->students);
+    blackboard->students = NULL;
 }
 
 void pushToBlackboard(Blackboard *blackboard, Student *student) {
