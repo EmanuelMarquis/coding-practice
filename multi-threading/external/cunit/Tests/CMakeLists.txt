@@ -1,5 +1,5 @@
 add_executable(cicd-fail-setupfuncs
-  cicd-fail-setupfuncs.c
+        cicd-fail-setupfuncs.c
   )
 target_link_libraries(
   cicd-fail-setupfuncs

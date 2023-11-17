@@ -1,7 +1,7 @@
 // WinTest.cpp : Defines the entry point for the application. 
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 
 extern "C" {
   #include "Win.h"

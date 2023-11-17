@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <wait.h> // sys_wait
 #include <pthread.h>
 #include "userInputThread.h"
 

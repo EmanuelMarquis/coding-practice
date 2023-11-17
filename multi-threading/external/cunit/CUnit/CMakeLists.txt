@@ -31,12 +31,12 @@ endif()
 
 FILE(GLOB headerfiles *.h)
 
-configure_file(CUnit/CUnit.h.in ${CMAKE_CURRENT_LIST_DIR}/CUnit/CUnit.h @ONLY)
+configure_file(CUnit/CUnit.h.in CUnit/CUnit.h @ONLY)
 
 
 # Package Generator  #######################################################
 set(CPACK_GENERATOR TGZ DEB)
-set(CPACK_PACKAGE_NAME "cunit")
+set(CPACK_PACKAGE_NAME "CUnit")
 set(CPACK_PACKAGE_DESCRIPTION "CUnit")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "The CUnity fork of the CUnit unit test framework")
 set(CPACK_PACKAGE_VERSION_MAJOR "${CUNIT_VERSION_MAJOR}")
@@ -69,11 +69,11 @@ if(UNIX AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES "Linux")
 endif()
 
 
-add_library(cunit STATIC ${cunit_srcs})
-target_link_libraries(cunit
+add_library(CUnit STATIC ${cunit_srcs})
+target_link_libraries(CUnit
   PUBLIC
     ${cunit_libs})
-target_include_directories(cunit
+target_include_directories(CUnit
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>
     $<INSTALL_INTERFACE:include>)
@@ -90,9 +90,9 @@ if(NOT CUNIT_DISABLE_TESTS)
 
   target_include_directories(cunit_test
     PRIVATE
-      Sources/Framework
-      Sources/Test
-      ${CMAKE_CURRENT_LIST_DIR}
+          Sources/Framework
+          Sources/Test
+          .
     )
   target_link_libraries(cunit_test
     ${cunit_libs})
@@ -104,8 +104,8 @@ if(NOT CUNIT_DISABLE_TESTS)
 endif()
 
 if(CUNIT_CMAKE_INSTALL STREQUAL yes)
-  install(DIRECTORY CUnit/ DESTINATION include/CUnit)
-  install(TARGETS cunit DESTINATION lib EXPORT cunit-targets)
+  install(DIRECTORY CUnit DESTINATION include/CUnit)
+  install(TARGETS CUnit DESTINATION lib EXPORT cunit-targets)
   install(EXPORT cunit-targets DESTINATION CUnit/share/cmake FILE CUnitTargets.cmake)
   install(FILES CUnitConfig.cmake DESTINATION CUnit/share/cmake)
 endif()

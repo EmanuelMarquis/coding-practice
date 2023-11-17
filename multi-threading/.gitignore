@@ -1,7 +1,7 @@
 # DIRS
 /build
 /CMakeFiles
-
+/cmake-build-debug
 # FILES
 cmake_install.cmake
 CMakeCache.txt

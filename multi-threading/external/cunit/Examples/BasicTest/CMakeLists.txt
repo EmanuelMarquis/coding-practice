@@ -9,7 +9,7 @@ project(Examples-BasicTest C)
 
 add_executable(t-ex-basictest
         BasicTest.c
-        ${CMAKE_CURRENT_LIST_DIR}/../ExampleTests.c
+        ../ExampleTests.c
         )
 
 target_link_libraries(t-ex-basictest
@@ -18,4 +18,4 @@ target_link_libraries(t-ex-basictest
 
 target_include_directories(t-ex-basictest
         PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}/..)
+        ..)

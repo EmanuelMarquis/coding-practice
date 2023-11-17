@@ -1,3 +1,9 @@
 [submodule "multi-threading/cunit"]
 	path = multi-threading/cunit
 	url = https://gitlab.com/cunity/cunit.git
+[submodule "multi-threading/external/curl"]
+	path = multi-threading/external/curl
+	url = https://github.com/curl/curl
+[submodule "multi-threading/external/sys_wait_h"]
+	path = multi-threading/external/sys_wait_h
+	url = https://github.com/curl/curl
