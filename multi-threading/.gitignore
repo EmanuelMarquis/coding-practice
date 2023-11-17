@@ -10,3 +10,6 @@ CPackConfig.cmake
 CPackSourceConfig.cmake
 /tests/tests
 tests-Results.xml
+/__init__.py
+/**/__init__.py
+/**/**/__init__.py
