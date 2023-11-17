@@ -6,4 +6,4 @@
 	url = https://github.com/curl/curl
 [submodule "multi-threading/external/sys_wait_h"]
 	path = multi-threading/external/sys_wait_h
-	url = https://github.com/curl/curl
+	url = https://github.com/win32ports/sys_wait_h
